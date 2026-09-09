@@ -2,7 +2,12 @@ from pathlib import Path
 import time
 
 import pandas as pd
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    f1_score,
+    confusion_matrix,
+)
 
 from classifier import classify
 
@@ -38,7 +43,6 @@ def classify_with_retry(text, max_retries=3):
             if "429" not in message and "rate_limit" not in message:
                 raise
 
-            # Do not repeatedly retry a daily token-quota exhaustion.
             if "tokens per day" in message or "tpd" in message:
                 raise RuntimeError(
                     "Groq daily token quota is exhausted. "
@@ -71,6 +75,80 @@ def load_existing_predictions():
     return existing
 
 
+def print_results(results):
+    print("\n=== INTENT RESULTS ===")
+
+    intent_accuracy = accuracy_score(
+        results["true_intent"],
+        results["predicted_intent"],
+    )
+
+    intent_macro_f1 = f1_score(
+        results["true_intent"],
+        results["predicted_intent"],
+        average="macro",
+        zero_division=0,
+    )
+
+    print("Accuracy:", round(intent_accuracy, 3))
+    print("Macro-F1:", round(intent_macro_f1, 3))
+
+    print(
+        classification_report(
+            results["true_intent"],
+            results["predicted_intent"],
+            zero_division=0,
+        )
+    )
+
+    print("\n=== ESCALATION RESULTS ===")
+
+    escalation_accuracy = accuracy_score(
+        results["true_escalate"],
+        results["predicted_escalate"],
+    )
+
+    escalation_macro_f1 = f1_score(
+        results["true_escalate"],
+        results["predicted_escalate"],
+        average="macro",
+        zero_division=0,
+    )
+
+    escalation_recall = f1_score(
+        results["true_escalate"],
+        results["predicted_escalate"],
+        average=None,
+        labels=["yes"],
+        zero_division=0,
+    )[0]
+
+    print("Accuracy:", round(escalation_accuracy, 3))
+    print("Macro-F1:", round(escalation_macro_f1, 3))
+    print("Escalation recall:", round(escalation_recall, 3))
+
+    print(
+        classification_report(
+            results["true_escalate"],
+            results["predicted_escalate"],
+            zero_division=0,
+        )
+    )
+
+    print("\n=== ESCALATION CONFUSION MATRIX ===")
+    print(
+        pd.DataFrame(
+            confusion_matrix(
+                results["true_escalate"],
+                results["predicted_escalate"],
+                labels=["no", "yes"],
+            ),
+            index=["true_no", "true_yes"],
+            columns=["pred_no", "pred_yes"],
+        )
+    )
+
+
 def main():
     df = pd.read_excel(GOLDEN_PATH)
     existing = load_existing_predictions()
@@ -80,11 +158,13 @@ def main():
         completed_ids = set()
     else:
         predictions = existing.to_dict("records")
-        completed_ids = set(existing["customer_tweet_id"].astype(str))
+        completed_ids = set(
+            existing["customer_tweet_id"].astype(str)
+        )
 
         print(
             f"Found {len(existing)} existing predictions. "
-            "Resuming from the remaining examples."
+            "Resuming from remaining examples."
         )
 
     remaining = df[
@@ -120,7 +200,6 @@ def main():
             "confidence": result["confidence"],
         })
 
-        # Save after every successful prediction.
         pd.DataFrame(predictions).to_csv(
             OUTPUT_PATH,
             index=False,
@@ -128,45 +207,19 @@ def main():
 
     results = pd.DataFrame(predictions)
 
-    print("\n=== INTENT RESULTS ===")
-    print(
-        "Accuracy:",
-        round(
-            accuracy_score(
-                results["true_intent"],
-                results["predicted_intent"],
-            ),
-            3,
-        ),
-    )
+    expected_ids = set(df["customer_tweet_id"].astype(str))
+    actual_ids = set(results["customer_tweet_id"].astype(str))
 
-    print(
-        classification_report(
-            results["true_intent"],
-            results["predicted_intent"],
-            zero_division=0,
+    missing_ids = expected_ids - actual_ids
+
+    if missing_ids:
+        raise RuntimeError(
+            f"Evaluation incomplete: {len(missing_ids)} "
+            f"golden examples are missing predictions. "
+            "Metrics are not reported as final."
         )
-    )
 
-    print("\n=== ESCALATION RESULTS ===")
-    print(
-        "Accuracy:",
-        round(
-            accuracy_score(
-                results["true_escalate"],
-                results["predicted_escalate"],
-            ),
-            3,
-        ),
-    )
-
-    print(
-        classification_report(
-            results["true_escalate"],
-            results["predicted_escalate"],
-            zero_division=0,
-        )
-    )
+    print_results(results)
 
     print(f"\nSaved predictions to: {OUTPUT_PATH}")
 
