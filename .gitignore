@@ -1,6 +1,5 @@
 # Raw TWCS dataset — do not commit
-data/raw/twcs/
-data/raw/archive.zip
+data/raw/
 
 # Python
 __pycache__/
