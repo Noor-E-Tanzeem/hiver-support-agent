@@ -1,0 +1,17 @@
+# Raw TWCS dataset — do not commit
+data/raw/twcs/
+data/raw/archive.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+.vscode/
