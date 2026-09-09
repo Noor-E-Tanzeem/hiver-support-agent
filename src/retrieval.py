@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-DATA_PATH = "data/processed/apple_pairs.csv"
+DATA_PATH = "data/processed/apple_pairs_retrieval.csv"
 
 
 class HistoricalRetriever:
