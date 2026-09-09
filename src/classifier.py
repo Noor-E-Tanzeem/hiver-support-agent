@@ -1,11 +1,14 @@
 import os
 import json
 import re
+from pathlib import Path
 
 from dotenv import load_dotenv
 from groq import Groq
 
-load_dotenv()
+
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
 
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
 
@@ -21,6 +24,7 @@ INTENTS = [
     "hardware_accessories",
     "other_unclear",
 ]
+
 
 ESCALATION_REASONS = [
     "private_account_or_security",
@@ -142,7 +146,7 @@ def classify(customer_text: str) -> dict:
     response = client.chat.completions.create(
         model="openai/gpt-oss-20b",
         temperature=0,
-        max_completion_tokens=256,
+        max_completion_tokens=512,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": customer_text},
