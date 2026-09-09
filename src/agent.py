@@ -1,8 +1,13 @@
 import json
 
-from classifier import classify
-from generator import generate_reply
-from retrieval import HistoricalRetriever
+try:
+    from .classifier import classify
+    from .generator import generate_reply
+    from .retrieval import HistoricalRetriever
+except ImportError:
+    from classifier import classify
+    from generator import generate_reply
+    from retrieval import HistoricalRetriever
 
 
 retriever = HistoricalRetriever()

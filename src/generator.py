@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 from dotenv import load_dotenv
 from groq import Groq
@@ -26,10 +27,11 @@ Use the historical AppleSupport examples as behavioral evidence:
 The intent and escalation decision have already been determined by the triage system.
 Respect them.
 
-Return ONLY valid JSON:
+Return ONLY a JSON object. Do not use markdown fences.
 
+The JSON must have exactly this structure:
 {
-  "reply": "...",
+  "reply": "customer-facing response",
   "grounding_evidence": [
     {
       "reason": "brief explanation of which historical example influenced the reply",
@@ -38,6 +40,16 @@ Return ONLY valid JSON:
   ]
 }
 """
+
+
+def _parse_json(content):
+    content = content.strip()
+
+    # Remove accidental markdown code fences if the model adds them.
+    content = re.sub(r"^```(?:json)?\s*", "", content)
+    content = re.sub(r"\s*```$", "", content)
+
+    return json.loads(content)
 
 
 def generate_reply(
@@ -59,7 +71,6 @@ def generate_reply(
         model="openai/gpt-oss-20b",
         temperature=0,
         max_completion_tokens=256,
-        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": GENERATOR_PROMPT},
             {
@@ -69,15 +80,27 @@ def generate_reply(
         ],
     )
 
-    result = json.loads(
-        response.choices[0].message.content.strip()
-    )
+    content = response.choices[0].message.content
+
+    if not content:
+        raise ValueError("Generator returned empty content")
+
+    result = _parse_json(content)
+
+    if not isinstance(result, dict):
+        raise ValueError("Generator output must be a JSON object")
 
     if "reply" not in result:
         raise ValueError("Generator output missing reply")
 
     if "grounding_evidence" not in result:
         raise ValueError("Generator output missing grounding_evidence")
+
+    if not isinstance(result["reply"], str):
+        raise ValueError("Generator reply must be a string")
+
+    if not isinstance(result["grounding_evidence"], list):
+        raise ValueError("grounding_evidence must be a list")
 
     return result
 
