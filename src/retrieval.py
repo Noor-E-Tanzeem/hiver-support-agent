@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-DATA_PATH = "data/processed/apple_pairs_retrieval.csv"
+ROOT = Path(__file__).resolve().parent.parent
+DATA_PATH = ROOT / "data" / "processed" / "apple_pairs_retrieval.csv"
 
 
 class HistoricalRetriever:
@@ -26,7 +29,7 @@ class HistoricalRetriever:
 
         scores = cosine_similarity(
             query_vector,
-            self.matrix
+            self.matrix,
         ).flatten()
 
         top_indices = scores.argsort()[-top_k:][::-1]
@@ -52,7 +55,10 @@ class HistoricalRetriever:
 if __name__ == "__main__":
     retriever = HistoricalRetriever()
 
-    query = "My iPhone battery is draining very quickly after the latest update."
+    query = (
+        "My iPhone battery is draining very quickly "
+        "after the latest update."
+    )
 
     results = retriever.search(query, top_k=3)
 
