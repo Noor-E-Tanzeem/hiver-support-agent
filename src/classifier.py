@@ -57,8 +57,34 @@ Escalate when the case involves:
 - potentially risky or harmful ambiguity
 - a case normally requiring private/DM support
 
-Do not escalate merely because an issue is technically difficult.
-Straightforward how-to/factual questions can be handled without escalation.
+IMPORTANT ESCALATION POLICY:
+
+Escalation is not limited to security or dangerous situations.
+
+Escalate when resolving the customer's particular case would normally require
+AppleSupport to inspect, troubleshoot, verify, or continue the case.
+
+In particular:
+- Device malfunction cases generally require escalation.
+- Connectivity problems generally require escalation.
+- Hardware problems generally require escalation.
+- Specific app/service failures that require investigation generally require escalation.
+- Battery complaints may be handled without escalation when they are simple,
+  general questions, but escalate when the customer reports a specific device
+  problem that needs investigation.
+- Account, billing, purchase, or subscription issues generally require escalation.
+- Vague or incomplete messages should be escalated when there is not enough
+  information to safely determine the appropriate support response.
+- Straightforward settings/how-to questions should generally NOT be escalated.
+- Simple factual questions that can be answered without case-specific
+  investigation should generally NOT be escalated.
+
+Use the historical support workflow as the deciding factor:
+if resolving the customer's particular case would normally require AppleSupport
+to inspect, troubleshoot, verify, or continue the case privately, escalate it.
+
+Do not assume "no escalation" merely because a generic troubleshooting step
+could be suggested.
 
 If escalating, choose one reason:
 private_account_or_security
