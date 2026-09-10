@@ -9,7 +9,6 @@ venv/
 
 # Environment / secrets
 .env
-.env.*
 
 # OS / editor
 .DS_Store

@@ -1,16 +1,10 @@
-import os
 import json
 import re
-from pathlib import Path
 
-from dotenv import load_dotenv
-from groq import Groq
-
-
-ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(ROOT / ".env")
-
-client = Groq(api_key=os.environ["GROQ_API_KEY"])
+try:
+    from .llm_client import client, LLM_MODEL
+except ImportError:
+    from llm_client import client, LLM_MODEL
 
 
 INTENTS = [
@@ -144,7 +138,7 @@ def _parse_json(content):
 
 def classify(customer_text: str) -> dict:
     response = client.chat.completions.create(
-        model="openai/gpt-oss-20b",
+        model=LLM_MODEL,
         temperature=0,
         max_completion_tokens=512,
         messages=[
