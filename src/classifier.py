@@ -137,23 +137,56 @@ def _parse_json(content):
 
 
 def classify(customer_text: str) -> dict:
-    response = client.chat.completions.create(
-        model=LLM_MODEL,
-        temperature=0,
-        max_completion_tokens=512,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": customer_text},
-        ],
-    )
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": customer_text},
+    ]
 
-    content = response.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model=LLM_MODEL,
+            temperature=0,
+            max_completion_tokens=1024,
+            response_format={"type": "json_object"},
+            messages=messages,
+        )
 
-    if not content:
-        raise ValueError("Classifier returned empty content")
+        content = response.choices[0].message.content
 
-    result = _parse_json(content)
+        if not content:
+            raise ValueError("Classifier returned empty content")
+
+        result = _parse_json(content)
+
+    except Exception as primary_error:
+        message = str(primary_error).lower()
+
+        # Groq JSON mode can occasionally fail to produce a valid
+        # document for a particular input. Retry without constrained
+        # JSON generation, then apply the same parser and validation.
+        if "json_validate_failed" not in message:
+            raise
+
+        print(
+            "Groq JSON mode failed. "
+            "Retrying without constrained JSON..."
+        )
+
+        fallback_response = client.chat.completions.create(
+            model=LLM_MODEL,
+            temperature=0,
+            max_completion_tokens=512,
+            messages=messages,
+        )
+
+        fallback_content = fallback_response.choices[0].message.content
+
+        if not fallback_content:
+            raise ValueError(
+                "Classifier fallback returned empty content"
+            ) from primary_error
+
+        result = _parse_json(fallback_content)
 
     if not isinstance(result, dict):
         raise ValueError("Classifier output must be a JSON object")
