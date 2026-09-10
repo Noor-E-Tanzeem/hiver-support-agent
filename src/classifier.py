@@ -141,6 +141,7 @@ def classify(customer_text: str) -> dict:
         model=LLM_MODEL,
         temperature=0,
         max_completion_tokens=512,
+        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": customer_text},

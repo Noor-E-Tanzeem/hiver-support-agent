@@ -64,6 +64,19 @@ def classify_with_retry(text, max_retries=3):
                 time.sleep(1)
                 continue
 
+            # Groq JSON mode can occasionally fail to produce a valid
+            # JSON document even when the same prompt succeeds on retry.
+            if "json_validate_failed" in message:
+                wait_seconds = 2
+
+                print(
+                    "Groq JSON generation failed. "
+                    f"Retrying in {wait_seconds}s..."
+                )
+
+                time.sleep(wait_seconds)
+                continue
+
             # Handle temporary rate limits.
             if "429" not in message and "rate_limit" not in message:
                 raise
