@@ -1,4 +1,5 @@
 from pathlib import Path
+import argparse
 import time
 
 import pandas as pd
@@ -9,7 +10,10 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 
-from classifier import classify
+try:
+    from .classifier import classify
+except ImportError:
+    from classifier import classify
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +37,8 @@ def normalize_escalation(value):
 
 
 def classify_with_retry(text, max_retries=3):
+    empty_response_retried = False
+
     for attempt in range(max_retries):
         try:
             return classify(text)
@@ -40,9 +46,29 @@ def classify_with_retry(text, max_retries=3):
         except Exception as e:
             message = str(e).lower()
 
+            # A reasoning model can occasionally return empty visible
+            # content. Retry this once rather than losing the run.
+            if "classifier returned empty content" in message:
+                if empty_response_retried:
+                    raise RuntimeError(
+                        "Classifier returned empty content after retry."
+                    )
+
+                empty_response_retried = True
+
+                print(
+                    "Classifier returned empty content. "
+                    "Retrying once..."
+                )
+
+                time.sleep(1)
+                continue
+
+            # Handle temporary rate limits.
             if "429" not in message and "rate_limit" not in message:
                 raise
 
+            # Do not repeatedly retry a daily quota exhaustion.
             if "tokens per day" in message or "tpd" in message:
                 raise RuntimeError(
                     "Groq daily token quota is exhausted. "
@@ -136,6 +162,7 @@ def print_results(results):
     )
 
     print("\n=== ESCALATION CONFUSION MATRIX ===")
+
     print(
         pd.DataFrame(
             confusion_matrix(
@@ -150,6 +177,22 @@ def print_results(results):
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Evaluate the classifier on the frozen golden set."
+    )
+
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Maximum number of NEW examples to evaluate in this run.",
+    )
+
+    args = parser.parse_args()
+
+    if args.limit is not None and args.limit <= 0:
+        raise ValueError("--limit must be a positive integer.")
+
     df = pd.read_excel(GOLDEN_PATH)
     existing = load_existing_predictions()
 
@@ -171,9 +214,12 @@ def main():
         ~df["customer_tweet_id"].astype(str).isin(completed_ids)
     ]
 
+    if args.limit is not None:
+        remaining = remaining.head(args.limit)
+
     print(f"Golden examples: {len(df)}")
     print(f"Already evaluated: {len(completed_ids)}")
-    print(f"Remaining: {len(remaining)}")
+    print(f"Remaining in this run: {len(remaining)}")
 
     for _, row in remaining.iterrows():
         current_count = len(predictions) + 1
@@ -185,21 +231,25 @@ def main():
 
         result = classify_with_retry(row["customer_text"])
 
-        predictions.append({
-            "customer_tweet_id": row["customer_tweet_id"],
-            "customer_text": row["customer_text"],
-            "true_intent": row["intent"],
-            "predicted_intent": result["intent"],
-            "true_escalate": normalize_escalation(
-                row["should_escalate"]
-            ),
-            "predicted_escalate": normalize_escalation(
-                result["should_escalate"]
-            ),
-            "predicted_reason": result["escalation_reason"],
-            "confidence": result["confidence"],
-        })
+        predictions.append(
+            {
+                "customer_tweet_id": row["customer_tweet_id"],
+                "customer_text": row["customer_text"],
+                "true_intent": row["intent"],
+                "predicted_intent": result["intent"],
+                "true_escalate": normalize_escalation(
+                    row["should_escalate"]
+                ),
+                "predicted_escalate": normalize_escalation(
+                    result["should_escalate"]
+                ),
+                "predicted_reason": result["escalation_reason"],
+                "confidence": result["confidence"],
+            }
+        )
 
+        # Save after every successful prediction so the evaluation
+        # can resume safely after interruption or quota exhaustion.
         pd.DataFrame(predictions).to_csv(
             OUTPUT_PATH,
             index=False,
@@ -207,21 +257,32 @@ def main():
 
     results = pd.DataFrame(predictions)
 
-    expected_ids = set(df["customer_tweet_id"].astype(str))
-    actual_ids = set(results["customer_tweet_id"].astype(str))
+    expected_ids = set(
+        df["customer_tweet_id"].astype(str)
+    )
+
+    actual_ids = set(
+        results["customer_tweet_id"].astype(str)
+    )
 
     missing_ids = expected_ids - actual_ids
 
     if missing_ids:
-        raise RuntimeError(
-            f"Evaluation incomplete: {len(missing_ids)} "
-            f"golden examples are missing predictions. "
-            "Metrics are not reported as final."
+        print(
+            f"\nEvaluation batch complete. "
+            f"{len(missing_ids)} golden examples still need predictions."
         )
+        print(
+            "Final metrics will be reported only after all 200 "
+            "golden examples are evaluated."
+        )
+        return
 
     print_results(results)
 
-    print(f"\nSaved predictions to: {OUTPUT_PATH}")
+    print(
+        f"\nSaved predictions to: {OUTPUT_PATH}"
+    )
 
 
 if __name__ == "__main__":
