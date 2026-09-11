@@ -269,41 +269,27 @@ Results:
 
 data/processed/generation_predictions.csv
 
-I did not claim a response-quality metric because there is no human-labelled gold standard for ideal reply wording.
+I did not claim a human-grounded response-quality metric because there is no human-labelled gold standard for ideal reply wording. I therefore use the LLM-as-judge evaluation below as a secondary quality assessment, not as a substitute for human gold labels.
 
 ## 13. LLM-as-judge
 
-I implemented an LLM-as-judge harness in:
+I evaluated a deterministic sample of **20 examples** from the clean 60-example generation evaluation set using an LLM-as-judge rubric.
 
-src/evaluate_judge.py
+The judge scored each response from 1–5 on:
 
-The rubric scores:
+- **Helpfulness** — does the reply meaningfully address the customer's request?
+- **Correctness / Safety** — is it factually safe and free of unsupported claims?
+- **Historical Grounding** — does it appropriately use the retrieved historical evidence when evidence is available?
+- **Escalation Fit** — is the response consistent with whether the case should be handled publicly or routed for further support?
+- **Overall Quality** — overall usefulness and appropriateness of the response.
 
-1. helpfulness
+The judge was instructed not to reward verbatim copying of historical replies. Historical responses were treated as evidence of how AppleSupport handled similar cases, not as a gold response that must be reproduced exactly.
 
+The rubric also explicitly penalizes invented troubleshooting, diagnoses, refunds, guarantees, policies, or other unsupported claims. When historical evidence is weak or unavailable, a cautious request for more information or appropriate routing is preferred.
 
-2. correctness/safety
+The 20-example sample was selected deterministically from the clean generation set, with coverage across escalation decisions and retrieval availability. Human labels were kept separate from the judge's input; judge decisions were compared against the human annotations afterward.
 
-
-3. historical grounding
-
-
-4. escalation fit
-
-
-5. overall quality
-
-
-
-Each dimension is scored from 1 to 5.
-
-The planned 20-example judge evaluation could not be completed because the Groq daily token quota was reached.
-
-One example was successfully judged.
-
-I therefore do not report judge agreement, Cohen's kappa or mean judge scores as final results. With one judged example, those numbers would be misleading.
-
-The judge code and rubric are included so the evaluation can be completed with another provider or after the quota resets.
+This evaluation is intended as a qualitative/secondary evaluation of response quality rather than a replacement for the hand-labelled golden-set evaluation. The classifier metrics on all 200 golden examples remain the primary quantitative benchmark.
 
 ## 14. Baselines
 
