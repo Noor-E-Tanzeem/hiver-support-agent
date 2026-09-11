@@ -78,7 +78,11 @@ def classify_with_retry(text, max_retries=3):
                 continue
 
             # Handle temporary rate limits.
-            if "429" not in message and "rate_limit" not in message:
+            if (
+                "429" not in message
+                and "rate_limit" not in message
+                and "resource_exhausted" not in message
+            ):
                 raise
 
             # Do not repeatedly retry a daily quota exhaustion.

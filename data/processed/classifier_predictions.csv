@@ -1,0 +1,216 @@
+customer_tweet_id,customer_text,true_intent,predicted_intent,true_escalate,predicted_escalate,predicted_reason,confidence
+1960678,@AppleSupport is there anyway to disable the media controls is safari 11 on macOS 10.13 I just want to control iTunes not safari!!!!,settings_how_to,settings_how_to,no,no,,0.95
+2130383,Hey @115858 your latest #update keeps screwing up my apps! @126 is having a heart attack! Fix it up pls,apps_services,software_update,yes,yes,case_specific_diagnosis,0.95
+2805983,I got read receipts off &amp; niggas can still tell i looked at they message ? @115858 ?? What’s the issue guys,settings_how_to,settings_how_to,no,no,,0.95
+243329,"my average iphone battery life
+240 minutes on ios 10
+90-100 minutes on ios 11 
+@AppleSupport @115858",battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.9
+1717280,@115858 @AppleSupport my control center doesn’t show there is music playing and my iOS 11 KEEPS lagging and freezing -.- https://t.co/fIt6JTXkSi,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2975684,"@AppleSupport Since last update my phone has turned into a brick. I've been buying iPhones since they came but you guys are dropping the ball now.  My phone doesn't even work, it's slow, the update is full of issues. Not buying iPhones any more.",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1496723,"@AppleSupport i can’t purchase diamond in mobile legend, how to fix it? https://t.co/0C0Lq6weMQ",orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2070045,@115858 actualice mi iPhone y ahora la batería no me dura ni medio día 😡😡😡😡@AppleSupport @2310,battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.95
+1360189,Why is my battery dying while my phone is on the charger? @115858,battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.9
+2307034,"tell me why @115858 just deleted all my photos to make space for a new software update......... smh smh, yall better send me an 8 Plus for deleting 4 years of memories",apps_services,software_update,yes,yes,case_specific_diagnosis,0.95
+1023498,@AppleSupport Hi i am locked out of my iTunes account. Status of recovery says 23 hours however i need access urgently. anything i can do?,orders_account_billing,orders_account_billing,yes,yes,private_account_or_security,0.95
+2835809,@AppleSupport please sort the battery life issue with the iOS 11.1.1 as it is beyond shocking now and you charge a fortune for your products,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.95
+1950751,@115858 . If u are not giving insurance from now onwards from u r phone. U r sure to loose several loyal customers including me. Pathetic,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.9
+498572,The yellowing on my X screen is so bad. And it’s such a good phone otherwise 😔. @AppleSupport,hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+1060575,@AppleSupport Hello. When does the pre-qualifying work for existing upgrade program folks begin today?,orders_account_billing,orders_account_billing,no,no,,0.95
+40435,@AppleSupport  why when i️ type the letter “i” a symbol thing shows up,apps_services,settings_how_to,yes,no,,0.95
+2427347,"@AppleSupport @115858 why am I forced to keep itunes/ stock/ apple weather/ wallet/maps on my phone? I don’t use your apps and I know I am not the only one, but I don’t want them on there anymore. They are buggy and cause issues on the phone and take up space. #iphoneapp #iphone",settings_how_to,settings_how_to,no,no,,0.95
+58274,"@AppleSupport Hey, I just updated my Late 2012 Mac Mini to High Sierra and now my second monitor doesn't work (only a black screen that will show my cursor) need help fixing this ASAP! Thanks in advance.",hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+2728200,"Dear @115858 please observe this screen recording. Initially my battery is showing 5% and now when I switch on my charger, it shows 5% again I disconnected and reconnected my charger it showed 13%. What is this bug of yours??  Please fix it. https://t.co/gVR0kzrfuf",battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.95
+112830,"@AppleSupport my iCloud account was just locked down, &amp; I had to unlock it with my 2 factor code and then change my password. Was it a hacking attempt...?",orders_account_billing,orders_account_billing,yes,yes,private_account_or_security,0.95
+1973784,"@AppleSupport Hi, my phone has lost all email addresses in my contacts list and a whole lot of phones from my camera roll disappeared Ideas?",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+1954149,@AppleSupport iOS 7 with 11.0.2 plays wrong custom ringtone and cannot answer phone no red or green dot,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+1021147,@AppleSupport followme so i can dm u,other_unclear,other_unclear,yes,yes,insufficient_information,0.95
+2678863,@AppleSupport ok how do I get this notification to go away it’s been there for 2 days and won’t leave me alone I’m so annoyed https://t.co/ARlprJ8ids,settings_how_to,settings_how_to,no,no,,0.95
+665744,ALL IM TRYING TO DO IS PURCHASE A HOE ASS SONG @115858 AND YA LAME ASS SUPPORT WONT SEND ME THE FCKIN CODE FOR YA DUMB 2FACTOR AUTH SO I CAN USE MY DAMN FINGER PRINT https://t.co/3aQ4SOTvcd,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+365289,@AppleSupport I purchased a new MacBook Pro yesterday 10-7-17 at the Northpark location.  The left shift key does not work. can I get refund,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+375579,@115858 @AppleSupport this is whts happening with ur ios11 and abv updates blacked out screen https://t.co/arj37ZSItF,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+55960,"Ok, I have a $4.99 student account w/Apple Music but just realized some days ago they've been charging me da 12.99 family plan @115858 fix it",orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+1936620,".@AppleSupport #bug in #mail #iOS any time I search in mail &amp; scroll, I lose the ability to exit the search &amp; return to mail. https://t.co/C08bNpnz1e",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+1616957,@115858 @AppleSupport is there any chance you all will ever get these auto correct glitches under control??? Cause now instead of a problem with I there’s a problem with I.T (it autocorrects to that),apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+2406608,@115858 how have a been awake for an hour and my phone is down 20% battery??? When will the new update stop killin me like this???????,battery_charging,battery_charging,no,no,,0.95
+1544099,@115858 We HATE your update!!!! My phone is a slow POS and my battery dies so fast!,device_malfunction,battery_charging,yes,yes,insufficient_information,0.9
+1269562,@AppleSupport content purchased from my iTunes account shows up in my list of songs to play. (2/2),apps_services,apps_services,yes,no,,0.95
+1366386,"@applesupport 11.0.3 
+Since I updated, none of my 3rd party speakers or headphones have been working properly. I cant pause or change my 🎶",hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+1598647,Fix this shit!!!!! @115858 https://t.co/13njVLf7Pb,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+245259,@AppleSupport I can no longer view in landscape. I can’t figure out how to fix that.,settings_how_to,settings_how_to,no,no,,0.95
+1969319,There are so many glitches in this iOS 11 update its actually causing me professional issues @115858 . Hurry up and release a glitch fixer,device_malfunction,software_update,yes,yes,case_specific_diagnosis,0.95
+2743003,"@AppleSupport iBooks, I've got a 5S, and haven't upgraded to iOS11",other_unclear,apps_services,yes,no,,0.95
+2111523,Come on @115858 you guys need to fix this “I” thing where it changes I to         “A ?” Because it’s super annoying.... &amp; if iMessage doesn’t stop kicking me out of my message half way through I️ May freak out. 🙄,apps_services,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+542390,"@AppleSupport iPhone 6S &amp; iPhone 7 going to black screen with loading wheel, then to lock screen on a loop. Phone unusable. Need a fix",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+84209,"Is @115858 likely to fix this insane #batterydrain in #iOS11 anytime soon? My 7+ just dropped 5% in 1 minute 40 secs of screen on. 
+
+This update has been an all time low for me and for #Apple its horrible",battery_charging,battery_charging,no,no,,0.9
+121554,@AppleSupport It happens with any app and all my apps are updated til now.,other_unclear,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1204143,@AppleSupport my iPhone is still on a call after the call has ended. #pleasefixmyiphone,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+1880762,Since @115858 decided to the update I don’t know how many times my phone has crashed .. what a load of shit! 🙄,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1019380,@AppleSupport 7 Plus running 11,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+807368,#iOS11 c’est tout de même la cata... @115858 qu’as-tu fais de ta stabilité et de ton expérience sans bug ????? Horripilant.,other_unclear,device_malfunction,yes,yes,insufficient_information,0.9
+873948,"Hey @AppleSupport, the update to the podcast app seems to have added a click or two to the process of actually playing a podcast 👎",apps_services,apps_services,no,no,,0.95
+1632372,@AppleSupport I can’t update my Apple Watch series 3,software_update,software_update,yes,yes,insufficient_information,0.9
+242495,"@AppleSupport My iPhone is unresponsive when Im using apps like Instagram, Snapchat, podcast even playing music, the pause and play button isn’t shown.",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2398179,Really think @115858 should gives me some sort of award - I've successfully broken 3 #iPhone since April 🙋🏻back to iPhone 5 for now..woohoo!,other_unclear,other_unclear,no,yes,insufficient_information,0.9
+149949,@115858 why does my iPhone continually freeze since the new update?,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2291612,@AppleSupport I have an iPad 2 on iOS 9.3.5. Does backup to iTunes still work ok? How best can I speed up the iPad? Should I wipe and recreate from backup?,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1877760,What’s the point of upgrading to the new ios if you don’t fix the battery problem????? @115858,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+2280322,@AppleSupport I️ have but predictive text continues to replace my I with I️,apps_services,settings_how_to,yes,no,,0.95
+999186,@AppleSupport since updating to iOS 11.0.3 all my apps have stopped functioning properly and will barely open! I have restart 4 x day ☹️☹️☹️,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+1647397,"@AppleSupport Received an email from __email__
+Is my account #compromised  #Phishing #Appstore #Apple #AppleNews https://t.co/gb2axaTDvu",orders_account_billing,orders_account_billing,yes,yes,private_account_or_security,0.95
+2887410,@AppleSupport my music app keeps crashing on my iphone 6S. can i get some help with this,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+426726,"@AppleSupport when ever I get an email from this one sender, it goes to archive on the Mac mail app. How can I stop this?",settings_how_to,settings_how_to,no,no,,0.95
+817061,"hey guys @115858 @AppleSupport, can you include gifs in iMessage in the next iOS update ?? https://t.co/ch4RjDNBtQ",apps_services,other_unclear,no,no,,0.95
+1913038,"@AppleSupport every time I log into my account. MacBook Pro touchbar 15” MacBookPro14,3. macOS Sierra 10.12.6. How Can I solve this? I did an hard reset and happened nothing... Thanks https://t.co/kYYqvJr9XE",device_malfunction,orders_account_billing,yes,yes,private_account_or_security,0.9
+2013989,@AppleSupport what is wrong with my typing. I️ can’t type the word eye. This is ridiculous.,apps_services,device_malfunction,yes,yes,case_specific_diagnosis,0.9
+2901951,Anyone figured out how to delete apps in ios 11.1.2? @AppleSupport,settings_how_to,settings_how_to,no,no,,0.95
+2373226,@AppleSupport Only happens when playing through phone speakers or Bluetooth. Happens with Apple Music app,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+388560,"Then you will charge me 2,500 pesos for the repair. @115858 @AppleSupport",orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2125153,@AppleSupport after upgrading to iOS 11.1 on my iPhone7 the cellular connection disconnects in locations where it stayed connected with pervious iOS versions. In addition it will lose cellular connection randomly even when the phone isn’t moving. This is unbelievably frustrating!,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+2583153,"@AppleSupport ever since i updated to ios 11 my apple music isnt working properly. i cant add, delete or download any songs and it freezes whenever i try to make new playlists",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+2831817,"@AppleSupport  Did the Santa Monica, CA Promenade store make phone calls to local customers about a breach in their iCloud accounts?  I️ received four calls today with an automated voice saying to call an 855 phone number.",orders_account_billing,other_unclear,yes,yes,private_account_or_security,0.95
+2261485,@AppleSupport Computer is operational at the moment and I’ve tried a different wifi network and still same result. Any other options?,other_unclear,connectivity_communication,yes,yes,insufficient_information,0.8
+554756,"@AppleSupport I upgraded my iPad to iOS 11.2 but @6676 continues to crash 3 seconds after opening the app, any suggestions on how to fix?",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+245983,@AppleSupport Yes,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+323025,@115858 @AppleSupport Siri has gotten worse not better with new update. She gets everything wrong... even setting timers! What happened?!,apps_services,apps_services,no,yes,case_specific_diagnosis,0.95
+851236,What’s up with this update @115858 I set the brightness to halfway and it goes full brightness wtf #killingmybattery plz fix,settings_how_to,software_update,no,yes,case_specific_diagnosis,0.9
+1894123,@116333 https://t.co/EnVqMTH7Hv,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+1999682,Yo @AppleSupport actually fix this shit your key board will not let me use the letter after H in the alphabet by itself outside of iMessage,apps_services,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+652787,iOS 11.0.3 sucks big fat donkey dick.  My phone won’t stop crashing.  Why do we pay the money we pay for this shit? 💆🏻‍♂️ @115858,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+877721,"@AppleSupport ....4 what it's worth.  11.0.3 randomly places calls, randomly opens camera &amp; freezes siri - listens but doesn't respond.",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2689508,"@AppleSupport 11.1.1 update has made wifi nearly non-existent on my phone. Can't find networks previously found, signals weak, tells me the password is wrong (it's not), won't reconnect... I might as well not have wifi. I can't be the only one.",connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+9275,@AppleSupport I updated to iOS 11.1 and the phone get really warm and the battery dropped by 10% in 10 minuets when I watched videos in YouTube. iPhone 7+,battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.95
+2293505,@AppleSupport so I have a noticeable issue with my iMac screen that apple diagnostics says does not exist.. how do I fix?,hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+301854,@AppleSupport hello I’m a U.K. citizen and since upgrading my iPhone to ios11 my phone has been crashing and I’ve had problems with my apps,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2492380,Updated my @115858 iPhone last night and noticing my battery is going down fast - a phone call of less than 5 minutes knocked off nearly 20% Is this right?,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+2028945,@AppleSupport can you please tell me why my phone has practically broken since the last update?! It’s so crap now.,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+145190,.@115858 I do not need you guys to make “memories” for me. How is my location showing in photos? I want all that shxt off please. Wtf,settings_how_to,settings_how_to,no,no,,0.95
+1398092,@AppleSupport switched from playing a song to the FM radio function while I was adjusting the volume. How does it get inputs that mixed up?,device_malfunction,apps_services,yes,yes,case_specific_diagnosis,0.95
+1990474,@AppleSupport help me,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+274953,"@AppleSupport Can you help me with a 10.5” iPad Pro Apple keyboard bug? Type but no output on screen. Happens about three times a day. Toggling to lock screen and back helps. Also, once a week it starts deleting text like you’re holding delete key. Would appreciate any help.",hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+2062110,@AppleSupport whyyyyy you delete all my pics https://t.co/y0FrYGWYBN,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+143565,Hey @115858 how is it that a charge cord I bought from you guys is hittin me with the “Not supported” message? 🤦‍♂️❗️Lmaolololol Steve Jobs I miss ya fam. Want my SideKick back tho,hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+2597958,@115858 unable to connect to some wifi on my macbook OS High Sierra v10.13.1 after last 2 updates 😓😓😢,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+505076,@AppleSupport Now when I go into Apple Music it’s prompting her to sign up for a free 3-month trial. It’s not recognizing that she is part of our Family subscription. How do I fix that?,orders_account_billing,apps_services,yes,yes,case_specific_diagnosis,0.95
+1505151,@AppleSupport my battery life went down 20%  in one hour after upgrading to iOS 11.1. Help please.,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+1740858,Y’all I’m so over this I️ situation... @115858 WHEN ARE YOU FIXING THIS?!?!,other_unclear,other_unclear,yes,yes,insufficient_information,0.85
+1773242,"@AppleSupport it’s been 2 days 🙂 it won’t restart, turn off even not connecting to iTunes 🙃 https://t.co/X27TWx8yTw",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+862785,@AppleSupport I want to be able to easily turn off wifi and bluetooth,settings_how_to,settings_how_to,no,no,,0.95
+1897825,"iOS 11 sucks. Phone freezes, battery drains, bluetooth has interference and no longer connects properly to my car. Thanks @115858",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+559184,@AppleSupport Not paying for a closed-source OS so all my apps can crash. What’s up?,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+1924889,@AppleSupport attempting to redeem the plotagraph+ app from the apple store app and it’s saying the code isn’t valid? https://t.co/v7ZjMD0Hbu,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2947116,"Had my iPhone plugged in overnight and somehow, it drained the charge when it should be gaining it... @AppleSupport",battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.95
+2266132,Ever since I update my phone my shit been glitching @115858 what’s going on?,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1171410,"@AppleSupport; it’s been 4 days since I was asked to send a DM, I did and no reply.",other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+2207589,@115858 @118845 I don’t know which is at fault yet but the iPhone7 and BeatsSolo2 don’t play well together. My music is constantly interrupted by a technical fault. It’s deeply frustrating. I suspect it’s to do with earphones sharing with the charger port or a faulty wire?,hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+2586370,@AppleSupport Every app takes about 4 attempts to open. Alarms not working correctly so I am being late for work. Phone keeps freezing completely and then crashing/restarting so I am missing important work calls.,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1424746,@AppleSupport https://t.co/u3cuyKupjG,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+1707635,"@AppleSupport has really pissed me off,I've been trying to update my phone for the past 45 minutes for the shit to say there was an erro",software_update,software_update,yes,yes,insufficient_information,0.9
+2666280,"Accidental €32 in-app purchase by six-year old daughter on the iPhone and iTunes won't offer any way to cancel it :(
+
+Plus, Apple chat support not working. Damn.
+
+/cc @AppleSupport",orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2295750,@115858 please fix the fact all of my “I️” are changing to !. thanks.,apps_services,settings_how_to,yes,no,,0.95
+559786,@AppleSupport Why did the last update make my battery drain so fast now? Also takes forever to charge. No problems whatsoever before the last update.,battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.9
+1334378,@AppleSupport is something wrong with site and/or app??  Can't order!!,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2440835,"@AppleSupport iOS 11.1.1 sucks for iPhone6: battery drains, turns off on its own, apps don't open &amp; crash... Any plans to fix this mess?",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1919723,@AppleSupport @115858,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+1395675,"@AppleSupport bought a new iPhone and backed it up so all contacts are in my phone, but all calls are coming through UNKNOWN #iphone8",connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.9
+1235622,I’ve lost 3% battery on my #iPhone #6s while researching battery drainage after installing #ios1103 @AppleSupport,battery_charging,battery_charging,no,no,,0.95
+1639001,@AppleSupport i connect my iPhone to my car via USB but with 11.0.3 my car is now an unauthorized accessory. What the f...?,hardware_accessories,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+1538847,@AppleSupport Every app that I have to type also on couple games. Version 11.0.3,apps_services,other_unclear,yes,yes,insufficient_information,0.7
+1173945,@AppleSupport Followed it and “recovered” my account yet my Apple ID is still disabled. What next then?,orders_account_billing,orders_account_billing,yes,yes,private_account_or_security,0.95
+1930554,@AppleSupport what happened to App Store? Why i cannot connect to it?,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+2213588,@115858 @AppleSupport @115858 @115948  money has been debited by itune..don’t know why??..plz..refund it immediately https://t.co/94UCptJnsI,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+902829,"@115858 @AppleSupport why is my iPhone turning on its WiFi all by itself CONSTANTLY, like every 30 mins at least, after I upgraded my iOS?",settings_how_to,connectivity_communication,no,yes,case_specific_diagnosis,0.95
+1676235,@AppleSupport any idea why the letter “i” turns to “A ?” ? https://t.co/0ZuAPp0qif,apps_services,settings_how_to,yes,no,,0.95
+2367795,@AppleSupport Please fix the problem in the iOS 11 versions that cause phones to freeze! Having to do too many hard restarts!,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+892833,"@AppleSupport the latest fix has STILL NOT helped!! Slow response time, iMessage lags behind in typing, and battery drain is crazy! Fix it!",device_malfunction,battery_charging,yes,yes,case_specific_diagnosis,0.9
+31881,"@115858 hi, facing problems of mobile hanging. Moblile gets hanged while having conference call, massaging, etc. become very slow many times",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+743495,Ever since updating my phone my battery has dropped from 81% to 16% in no time @115858 #Iphone6s,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.95
+990406,Malgré les #MAJIOS11 @AppleSupport le bouton #wifi continue de s’activer tout seul  sur panneau de #contrôle et pas dans le menu général 🤔😡,settings_how_to,connectivity_communication,no,yes,case_specific_diagnosis,0.95
+821752,"@AppleSupport I have a few text replacements set up, but not for these words and it happens with many more words at random. Think it started with iOS 11.",apps_services,settings_how_to,yes,no,,0.95
+2728182,Shoutout to @AppleSupport for the new update my Touch ID don’t work and every 5 seconds my screen keeps rotation despite the fact it’s on auto lock !! #Fuming 😡😡😡,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+715642,@AppleSupport 11.0.2,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+2294687,"@AppleSupport My Apple TV4k keeps stopping playing my movies that i hire trough Apple, only fix is taking the power out of the back and reboot, then after serveral minutes the same. 3/4 times per movie,",apps_services,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+388031,@AppleSupport iPhone 7 Plus has lost about 20% of battery in less than 2 hours -  this seems a lot? Airpods and Watch connected but still?:(,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+2306651,"@AppleSupport If you actually read the tweet you’d see I said that was the ONLY option, unfortunately. I shouldn’t have to toggle WiFi off and on constantly to make a $1000 phone work.",other_unclear,connectivity_communication,no,yes,case_specific_diagnosis,0.95
+1838235,@AppleSupport can someone please tell me why my music has deleted itself and needs a WiFi connection despite being in aircraft mode?,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+2776048,@AppleSupport 2007 iMac running 10.11.6.  Suddenly keep getting warning about this Mac can’t connect to iCloud error. However messages and FaceTime calls keep coming through.,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+2950898,@AppleSupport my laptop won't turn on its been sitting like this for an hour and a half now I even tried shutting it  down turning it back on and didnt work 😭 https://t.co/q0XbJ6YyRD,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1126192,Thanks alot for turning my perfectly good iPhone into an unusable piece of crap with your new update @AppleSupport,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2573922,@AppleSupport No internet with my 802.11ac (5 Ghz) WiFi network after upgrading to iOS 11.1.1 on iPhone 6s. Resetted/restored everything flashed latest firmwares everywhere. All my Windows 10 and Android devices connnect without trouble.,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+1936274,@115858 @AppleSupport  can you please so out battery life please and my battery went from 20% to 0% in 2 minuets wtf,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.95
+2728259,"@AppleSupport Hi - nope, they don't last that long :(  I generally check that the charging symbol is showing.  So it would seem unlikely that is the issue.",battery_charging,battery_charging,yes,no,,0.95
+287505,"@AppleSupport so many issues with iOS 11. Freezing, lagging, apps not working, battery life is none. just general terribleness. FIX THIS!!!",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1478063,@AppleSupport Hello Apple I just a weird email saying it’s from iCloud but I found out it was a fake. Please warn others #fakeemail https://t.co/fMa9usocDw,orders_account_billing,other_unclear,yes,yes,private_account_or_security,0.95
+2008231,@115858  realease a better update my phone is freezing 😭😭😭😭,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2295250,@AppleSupport why is that I restarted my phone and it deleted my photos?? ☹️,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+875132,"iOS 11 or as I like to call it, how to screw your battery in one easy download, what have @115858 done? #wtf #rubbish #frustrated",battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+1968226,I’ve had my phone off the charger for 2 and a half hours and it’s done to 65% even with battery saver on. @AppleSupport,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+2446400,@AppleSupport updated to iOS 11.1 and now Siri is “having trouble with the connection” and I just got iMessages from an hour ago... 🙄,apps_services,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+2967868,@AppleSupport my iPhone X just started displaying this green line down the right side of the screen. Apparently it’s an existing issue. What can I do to resolve this? https://t.co/NaH9iaMuFy,hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+2141021,omg @AppleSupport this is what texts look like in messages right now. #ios111 https://t.co/bdn21AOqZu,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.9
+2079318,@AppleSupport - hi - my 6s battery goes from fully charged to empty in a few hours since #IOS11!!!!,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.95
+260027,My iPhone 7+ is far slower and keeps freezing since upgrading to iOS11 - anyone else? #apple #iphone #iOS11 #ios11update @115858,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1487510,"@AppleSupport, I must say: IOS 11, since I have installed, have been consuming an extraordinary battery. How can I solve this?",battery_charging,battery_charging,no,no,,0.95
+116003,@AppleSupport My tweet pretty much says it all to be honest. The battery life and the touch screen inaccuracy are the most annoying.,device_malfunction,battery_charging,yes,yes,insufficient_information,0.9
+2666199,@AppleSupport I just got my iPhone SE. The screen is terrible - much worse view angles as on my 4s. It was advertised as being an IPS screen. Has this been replaced with a TN panel on the newer versions?,hardware_accessories,hardware_accessories,yes,no,,0.95
+2046001,Idk if it’s the new iOS update but my phone been lagging lately @AppleSupport,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2017504,why is it every time I update my phone something stops working? @AppleSupport pissed my lock screen no longer works now after updating 🙄,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1013203,"@AppleSupport after I updated my phone to OS 11, the battery performance is deteriorated..how can I revert back to OS 10?",battery_charging,software_update,no,yes,case_specific_diagnosis,0.95
+742283,#ios11update is taking the piss out of my battery. I am not upgrading it that’s what @115858 are thinking. Charged my phone full 3 times 2day,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+2637004,"hi, If you dont have the ability and quality of developing ios so please don't do it!! None of my photos or videos that I took with last version are not loading clarity.  The phone crashes at least 2 times every day. This is unbearable @AppleSupport https://t.co/3uClpasA2L",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1623368,"@AppleSupport i keep getting ""unable to make purchase from ITunes"" pop ups. why?",orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+284882,@115858 I updated my phone to your stupid update and now my phone wont turn on,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+835409,update: it has now been 12 hours @115858 I need assistance 🙏🏼,other_unclear,software_update,yes,yes,case_specific_diagnosis,0.9
+109050,"@AppleSupport Do I have to buy an iPhone 8 directly from Apple to be eligible for AppleCare+ or can I buy the phone separately and add AC+ afterwards, as long as it's within 60 days of my purchase?",orders_account_billing,orders_account_billing,no,yes,transaction_or_billing,0.95
+1944218,Thanks to your new update @115858 I can wake up to silent alarms now,apps_services,other_unclear,yes,no,,0.95
+1930379,@277633 @115858 Agreed. My 7sP has only had issues since 8 came out.  My kid is going to beat me soon with her 7sP all it’s issues.  @115858 software bytes,other_unclear,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1644562,"@AppleSupport Hi, what lens is on the built in webcam on the 2015 Retina Macbook Pro? What focal length is it? Thanks.",hardware_accessories,hardware_accessories,no,no,,0.95
+827144,@AppleSupport seriously! My 8 plus has crashed 6 times in the past 3 hours and at leat 20 since purchase. Freezes when opening apps. WTF??,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1681631,@AppleSupport can I have some assistance with iCloud syncing? I have one account only however the data is not reconciling between devices,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+2237357,@AppleSupport I️ bought an album on iTunes that won’t download and is saying it’s not available in the US. Some help please 🤷🏻‍♀️,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2754768,"@AppleSupport It was purchased through an @118101 store. The home screen keeps freezing with no clock, notifications etc. At times it has to be completely restarted.... :-/",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1775557,"@AppleSupport Hi, my App Store has been messing up since I downloaded iOS11 , can’t download apps nor update apps.",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+2051466,@AppleSupport iOS 11 ruined my battery life and slowed down my iPhone immensely. Takes me much longer to type messages or posts.,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.9
+1974151,Dear @115858 your iOS update SUCKS.  Drains battery. And insists on “live” photos #FAIL,battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.9
+1752115,@AppleSupport is iTunes down? Have purchased songs but they say unavailable to download at this time?!!!,orders_account_billing,apps_services,yes,no,,0.95
+1939981,@AppleSupport why is your calculator broken? 1+2+3 = 24 .... ?!?!,apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+1857818,"@AppleSupport The battery drain on ios11.3 is awful. Hurry up and sort it, Apple",battery_charging,battery_charging,no,no,,0.95
+2630172,"@115858 @AppleSupport my #HaloGames from @115890 #HaloSA and #HaloSS are crashing. Latest iOS updates and iPhone 7 restarts did not help. 
+
+These games are no longer on the app store. 
+
+What do I do? https://t.co/r727jxvNjb",apps_services,apps_services,yes,yes,case_specific_diagnosis,0.95
+41556,@AppleSupport locked out of my iPad. Followed instructions but it hasn’t worked. Please help. Also I want to turn this feature off,device_malfunction,orders_account_billing,yes,yes,private_account_or_security,0.95
+1742396,@115858 fix this I️ shit,other_unclear,other_unclear,yes,yes,insufficient_information,0.9
+1939462,@applesupport Fix your iOS 11 disaster now. My work iPhone crashes 40-50/day. Can't run my company on unreliable iOS. Switching to #Android,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+396971,@AppleSupport Wi-Fi i haven’t tried on cellular data,connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.9
+955690,Dear @115858 I need y’all to update the iOS agin to where I can turn off the automatic brightness! I had having my brightness all the way up!,software_update,settings_how_to,no,no,,0.95
+2040302,Apple decided to delete ALL my @115948 with this software update 😿 @115858 @115858 @115858,other_unclear,software_update,yes,yes,case_specific_diagnosis,0.95
+601368,"@262665 Stay with 10.3.3, i updated the same iPhone to 11.2 and in 30 minutes i lost almost 10 point of battery % @115858 what are you f**** doing??!! If i can i will downgrade to 10.3.3",battery_charging,battery_charging,no,yes,case_specific_diagnosis,0.95
+2899041,@115948 @AppleSupport for sure just pissed me off this morning! How is it that I verified my student account multiple times  for Apple Music and you debit my account for 9.99?!! I need answers and I need them now!,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+2435328,"@AppleSupport Yes contacts are on my phone, no restarting has not solved anything",apps_services,other_unclear,yes,yes,insufficient_information,0.8
+1773625,"@AppleSupport New OS freezes often (including mail, Facebook, ring, safari, maps) Alphabet in apps (Facebook / Instagram) are not reading correctly",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1932931,"@AppleSupport hi, people can’t hear me unless I put it on speaker. Can you please help me",connectivity_communication,connectivity_communication,yes,yes,case_specific_diagnosis,0.95
+2417481,"@AppleSupport @115858 #recommendation #HeySiri #Handsfree #DoNotDisturb. Please incorporate a ""Hey Siri"" function to turn on 'Do Not Disturb' while in driving. I tried that today, and Siri said it couldn't while I was in the car.",apps_services,settings_how_to,no,no,,0.95
+435827,@AppleSupport how can I downgrade from iOS 11?. This iPhone SE is overheating after updated,software_update,software_update,yes,yes,case_specific_diagnosis,0.95
+1007820,"@AppleSupport My iPhone has been restarting &amp;has zero space,malfunctions than has a lot of space&amp;has trouble w/iCloud music library. Help",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+356145,"@AppleSupport hi, i am from UAE, i have iP6s my board damaged. where i can replace the mother board??",hardware_accessories,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+1471823,"@AppleSupport Why does it take 1 day to recover my account? I gave my CC info on file, and code from text message you guys sent me.",orders_account_billing,orders_account_billing,yes,yes,private_account_or_security,0.95
+1776353,"My phone radiates enough heat to grill off of. Fixing it would cost a lot less than a lawsuit, allegedly. @AppleSupport",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2560408,@AppleSupport I have restarted at least 5x since installation. 11.1,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2109806,"@AppleSupport For the past hour, every 2 minutes I’ve had to restart my phone. Will there be an update of IOS11? I’m not the only one experiencing this-Phones are bugging out like wild fire.",device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+1763001,Yup @115858 keyboard needs to be fixed I can’t stand it,apps_services,hardware_accessories,yes,yes,case_specific_diagnosis,0.95
+604021,Can’t update or download FREE apps due to a billing problem? Wtf @115858 ?? #apple #iPhoneX,orders_account_billing,orders_account_billing,yes,yes,transaction_or_billing,0.95
+541118,@AppleSupport why tf my phone keep restarting!,device_malfunction,device_malfunction,yes,yes,case_specific_diagnosis,0.95
+2506697,My iPhone 7 Plus isn’t charging when on safari watching stuff online can anyone help to fix this? @AppleSupport @115858 #Iphone7,battery_charging,battery_charging,yes,yes,case_specific_diagnosis,0.9
+2678850,how do i go from 86% to 60%..?! get ur shit together @115858,battery_charging,battery_charging,no,no,,0.95
+1101069,@AppleSupport All my contacts erased from my phone. I didn’t do anything. Can you tell me how to restore ? This is the second.,apps_services,settings_how_to,yes,no,,0.95
+159557,@AppleSupport Travelled to but a new MacBook. Home to find only half charger in box. Where is quality control? If I take the wrapper off the machine &amp; use my old charger with a USB-C adapter am I invalidating my warranty? Best to return whole boxed machine?,orders_account_billing,hardware_accessories,yes,yes,case_specific_diagnosis,0.95

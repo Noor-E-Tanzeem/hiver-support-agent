@@ -2,9 +2,9 @@ import json
 import re
 
 try:
-    from .llm_client import client, LLM_MODEL
+    from .llm_client import generate
 except ImportError:
-    from llm_client import client, LLM_MODEL
+    from llm_client import generate
 
 
 GENERATOR_PROMPT = """
@@ -24,7 +24,9 @@ Use the historical AppleSupport examples as behavioral evidence:
 The intent and escalation decision have already been determined by the triage system.
 Respect them.
 
-Return ONLY a JSON object. Do not use markdown fences.
+Return ONLY a valid JSON object.
+Do not use markdown fences.
+Do not add any text before or after the JSON.
 
 The JSON must have exactly this structure:
 {
@@ -40,13 +42,52 @@ The JSON must have exactly this structure:
 
 
 def _parse_json(content):
+    if not content:
+        raise ValueError("Generator returned empty content")
+
     content = content.strip()
 
-    # Remove accidental markdown code fences if the model adds them.
-    content = re.sub(r"^```(?:json)?\s*", "", content)
-    content = re.sub(r"\s*```$", "", content)
+    content = re.sub(
+        r"^```(?:json)?\s*",
+        "",
+        content,
+    )
+    content = re.sub(
+        r"\s*```$",
+        "",
+        content,
+    )
 
     return json.loads(content)
+
+
+def _validate_result(result):
+    if not isinstance(result, dict):
+        raise ValueError(
+            "Generator output must be a JSON object"
+        )
+
+    if "reply" not in result:
+        raise ValueError(
+            "Generator output missing reply"
+        )
+
+    if "grounding_evidence" not in result:
+        raise ValueError(
+            "Generator output missing grounding_evidence"
+        )
+
+    if not isinstance(result["reply"], str):
+        raise ValueError(
+            "Generator reply must be a string"
+        )
+
+    if not isinstance(result["grounding_evidence"], list):
+        raise ValueError(
+            "grounding_evidence must be a list"
+        )
+
+    return result
 
 
 def generate_reply(
@@ -56,6 +97,34 @@ def generate_reply(
     escalation_reason,
     historical_evidence,
 ):
+    # If retrieval found no sufficiently similar historical case,
+    # do not let the LLM invent a detailed troubleshooting answer.
+    # Use a conservative response instead.
+    if not historical_evidence:
+        if should_escalate:
+            reply = (
+                "We'd be happy to take a closer look. "
+                "Please DM us with a few more details about the issue "
+                "so we can assist you further."
+            )
+        else:
+            reply = (
+                "Thanks for reaching out. Could you share a few more "
+                "details about the issue so we can better understand "
+                "what you're experiencing?"
+            )
+
+        return {
+            "reply": reply,
+            "grounding_evidence": [
+                {
+                    "reason": "No sufficiently similar historical evidence was retrieved; "
+                    "used a conservative information-request response.",
+                    "similarity": 0.0,
+                }
+            ],
+        }
+
     payload = {
         "customer_message": customer_message,
         "intent": intent,
@@ -64,42 +133,54 @@ def generate_reply(
         "historical_evidence": historical_evidence,
     }
 
-    response = client.chat.completions.create(
-        model=LLM_MODEL,
-        temperature=0,
-        max_completion_tokens=256,
-        messages=[
-            {"role": "system", "content": GENERATOR_PROMPT},
-            {
-                "role": "user",
-                "content": json.dumps(payload, ensure_ascii=False),
-            },
-        ],
-    )
+    messages = [
+        {
+            "role": "system",
+            "content": GENERATOR_PROMPT,
+        },
+        {
+            "role": "user",
+            "content": json.dumps(
+                payload,
+                ensure_ascii=False,
+            ),
+        },
+    ]
 
-    content = response.choices[0].message.content
+    try:
+        content = generate(
+            messages,
+            json_mode=True,
+            max_tokens=1024,
+        )
 
-    if not content:
-        raise ValueError("Generator returned empty content")
+        result = _parse_json(content)
 
-    result = _parse_json(content)
+    except Exception as primary_error:
+        message = str(primary_error).lower()
 
-    if not isinstance(result, dict):
-        raise ValueError("Generator output must be a JSON object")
+        is_json_constraint_failure = (
+            isinstance(primary_error, json.JSONDecodeError)
+            or "json_validate_failed" in message
+        )
 
-    if "reply" not in result:
-        raise ValueError("Generator output missing reply")
+        if not is_json_constraint_failure:
+            raise
 
-    if "grounding_evidence" not in result:
-        raise ValueError("Generator output missing grounding_evidence")
+        print(
+            "Constrained JSON generation failed. "
+            "Retrying without constrained JSON..."
+        )
 
-    if not isinstance(result["reply"], str):
-        raise ValueError("Generator reply must be a string")
+        fallback_content = generate(
+            messages,
+            json_mode=False,
+            max_tokens=1024,
+        )
 
-    if not isinstance(result["grounding_evidence"], list):
-        raise ValueError("grounding_evidence must be a list")
+        result = _parse_json(fallback_content)
 
-    return result
+    return _validate_result(result)
 
 
 if __name__ == "__main__":

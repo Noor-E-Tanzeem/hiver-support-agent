@@ -2,9 +2,9 @@ import json
 import re
 
 try:
-    from .llm_client import client, LLM_MODEL
+    from .llm_client import generate
 except ImportError:
-    from llm_client import client, LLM_MODEL
+    from llm_client import generate
 
 
 INTENTS = [
@@ -143,15 +143,11 @@ def classify(customer_text: str) -> dict:
     ]
 
     try:
-        response = client.chat.completions.create(
-            model=LLM_MODEL,
-            temperature=0,
-            max_completion_tokens=1024,
-            response_format={"type": "json_object"},
-            messages=messages,
+        content = generate(
+            messages,
+            json_mode=True,
+            max_tokens=1024,
         )
-
-        content = response.choices[0].message.content
 
         if not content:
             raise ValueError("Classifier returned empty content")
@@ -164,22 +160,24 @@ def classify(customer_text: str) -> dict:
         # Groq JSON mode can occasionally fail to produce a valid
         # document for a particular input. Retry without constrained
         # JSON generation, then apply the same parser and validation.
-        if "json_validate_failed" not in message:
+        is_malformed_json = (
+            isinstance(primary_error, json.JSONDecodeError)
+            or "json_validate_failed" in message
+        )
+
+        if not is_malformed_json:
             raise
 
         print(
-            "Groq JSON mode failed. "
+            "Constrained JSON generation failed. "
             "Retrying without constrained JSON..."
         )
 
-        fallback_response = client.chat.completions.create(
-            model=LLM_MODEL,
-            temperature=0,
-            max_completion_tokens=512,
-            messages=messages,
+        fallback_content = generate(
+            messages,
+            json_mode=False,
+            max_tokens=512,
         )
-
-        fallback_content = fallback_response.choices[0].message.content
 
         if not fallback_content:
             raise ValueError(
