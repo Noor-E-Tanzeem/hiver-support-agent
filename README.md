@@ -168,7 +168,7 @@ Metric	Result
 
 Accuracy	83.5%
 Macro-F1	72.9%
-Escalation recall	89.8%
+Escalation F1      89.8%
 
 
 Majority-escalation baseline: 79.0% accuracy.
@@ -269,11 +269,11 @@ Results:
 
 data/processed/generation_predictions.csv
 
-I did not claim a human-grounded response-quality metric because there is no human-labelled gold standard for ideal reply wording. I therefore use the LLM-as-judge evaluation below as a secondary quality assessment, not as a substitute for human gold labels.
+I did not claim a human-grounded response-quality metric because there is no human-labelled gold standard for ideal reply wording. The LLM-as-judge harness was implemented as a secondary quality assessment, but the attempted run was interrupted by provider quota limits, so no aggregate judge metric is reported.
 
 ## 13. LLM-as-judge
 
-I evaluated a deterministic sample of **20 examples** from the clean 60-example generation evaluation set using an LLM-as-judge rubric.
+I implemented an LLM-as-judge evaluation harness and rubric and attempted a deterministic 20-example evaluation sample from the clean 60-example generation evaluation set. The run was interrupted by the provider token-per-day quota after one example was successfully judged, so I do not report aggregate judge scores or human-agreement statistics.
 
 The judge scored each response from 1–5 on:
 
@@ -287,7 +287,7 @@ The judge was instructed not to reward verbatim copying of historical replies. H
 
 The rubric also explicitly penalizes invented troubleshooting, diagnoses, refunds, guarantees, policies, or other unsupported claims. When historical evidence is weak or unavailable, a cautious request for more information or appropriate routing is preferred.
 
-The 20-example sample was selected deterministically from the clean generation set, with coverage across escalation decisions and retrieval availability. Human labels were kept separate from the judge's input; judge decisions were compared against the human annotations afterward.
+The planned 20-example sample was selected deterministically from the clean generation set, with coverage across escalation decisions and retrieval availability. Human labels were kept separate from the judge's input. Because the run did not complete, no judge-versus-human agreement statistic is claimed.
 
 This evaluation is intended as a qualitative/secondary evaluation of response quality rather than a replacement for the hand-labelled golden-set evaluation. The classifier metrics on all 200 golden examples remain the primary quantitative benchmark.
 
@@ -318,7 +318,7 @@ Accuracy: 83.5%
 
 Macro-F1: 72.9%
 
-Escalation recall: 89.8%
+Escalation recall: 92.4%
 
 
 This is why escalation accuracy alone is not enough.
