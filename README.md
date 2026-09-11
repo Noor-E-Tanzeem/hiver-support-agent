@@ -383,36 +383,26 @@ Next step: reconstruct the conversation thread and pass a bounded recent context
 
 ## 16. What is misleading about my headline number?
 
-The 77.5% intent accuracy should not be interpreted as saying that the production support agent is 77.5% correct.
+The headline classifier accuracy of 77.5% is useful, but it should not be read as a production-ready quality estimate.
 
 Important limitations:
 
-only 200 golden examples
+- coverage sampling rather than natural traffic distribution
+- several small intent classes
+- `software_update` has only 4 golden examples, so its 0.43 F1 is not a stable estimate — a single misclassification shifts the score substantially
+- historical Twitter data
+- single-message classification
+- escalation accuracy only modestly above the 79% majority baseline
+- generation evaluated on only 60/200 examples
+- judge benchmark incomplete
+- retrieval coverage is not retrieval correctness
+- results depend on the selected LLM and prompt
 
-coverage sampling rather than natural traffic distribution
-
-several small intent classes
-
-historical Twitter data
-
-single-message classification
-
-escalation accuracy only modestly above the 79% majority baseline
-
-generation evaluated on only 60/200 examples
-
-judge benchmark incomplete
-
-retrieval coverage is not retrieval correctness
-
-results depend on the selected LLM and prompt
-
+All 200 golden examples were annotated by a single person; no inter-annotator agreement was measured, so individual labelling judgment may introduce some label noise.
 
 The most defensible conclusion is:
 
 > On this 200-example golden set, the classifier substantially outperforms the majority intent baseline and catches most human-labelled escalation cases, but retrieval and generation need stronger independent evaluation before production use.
-
-
 
 ## 17. What I did not build
 
